@@ -4,48 +4,47 @@ import {Title} from '../shared/Title';
 import {createEchartsOptions} from '../shared/createEchartsOptions';
 import {px} from '../shared/px';
 
-export const Chart5 = () => {
+export const Chart6 = () => {
   const divRef = useRef(null);
-  const colors = ['#856BED', '#F46064', '#F38E1C', '#1CDB7C', '#33A4FA'];
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
+    const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
     myChart.setOption(createEchartsOptions({
       legend: {
-        left: px(12),
-        top: px(4),
-        orient: 'vertical',
+        bottom: 0,
         textStyle: {color: 'white'},
         itemWidth: px(6),
         itemHeight: px(6),
-        itemGap: px(9)
+        itemGap: px(5)
       },
       color: colors,
       xAxis: {show: false},
       yAxis: {show: false},
       series: [
         {
-          left: px(30),
-          top: px(4),
+          bottom: px(15),
+          startAngle: -20,
           type: 'pie',
-          radius: ['75%', '90%'],
+          radius: ['25%', '90%'],
           avoidLabelOverlap: false,
           label: {
-            show: true, position: 'inside', textStyle: {color: 'white', fontSize: px(7)},
+            show: true, position: 'outside', textStyle: {color: 'white', fontSize: px(7)},
+            distanceToLabelLine: 0,
             formatter(options) {
-              return (options.value * 100).toFixed(0) + '%';
+              return options.value * 100 + '%';
             }
           },
-          labelLine: {show: false},
+          labelLine: {show: true, length: 0},
+          roseType: 'area',
           itemStyle: {
-            borderColor: '#0F113A',
-            borderWidth: px(2)
+            shadowBlur: px(200),
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
           },
           data: [
-            {value: 0.07, name: '10-20'},
-            {value: 0.10, name: '20-30'},
-            {value: 0.23, name: '30-40'},
-            {value: 0.28, name: '40-50'},
-            {value: 0.32, name: '50-60'},
+            {value: 0.36, name: '刑事案件'},
+            {value: 0.20, name: '民事案件'},
+            {value: 0.18, name: '经济案件'},
+            {value: 0.24, name: '其他案件'},
           ]
         }
       ]
@@ -53,7 +52,7 @@ export const Chart5 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="犯罪人员年龄分布"></Title>
+      <Title title="案发类型统计"></Title>
       <div ref={divRef} className="chart"></div>
     </div>
   );
