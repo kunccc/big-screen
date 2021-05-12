@@ -7,16 +7,16 @@ import {px} from '../shared/px';
 export const Chart7 = () => {
   const divRef = useRef(null);
   const data = [
-    {value: 0.08, name: '东岗路'},
-    {value: 0.06, name: '段家滩'},
-    {value: 0.11, name: '雁北'},
-    {value: 0.09, name: '五泉山'},
-    {value: 0.12, name: '中山路'},
-    {value: 0.06, name: '庆阳路'},
+    {value: 0.08, name: '深圳'},
+    {value: 0.06, name: '杭州'},
+    {value: 0.11, name: '武汉'},
+    {value: 0.09, name: '长沙'},
+    {value: 0.12, name: '兰州'},
   ];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
+    const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059'],
       xAxis: {show: false},
       yAxis: {show: false},
       grid: {x: 0, x2: 0, y: 0, y2: 0, containLabel: true},
@@ -54,8 +54,8 @@ export const Chart7 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="案发街道统计"></Title>
-      <div ref={divRef} className="chart"></div>
+      <Title title="案发地级市统计"/>
+      <div ref={divRef} className="chart"/>
     </div>
   );
 };

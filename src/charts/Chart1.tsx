@@ -6,10 +6,11 @@ import {createEchartsOptions} from '../shared/createEchartsOptions';
 export const Chart1 = () => {
   const divRef = useRef(null);
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
+    const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {
-        data: ['大南山镇', '下架山镇', '池尾街道', '大坝镇', '洪阳镇', '云落镇', '占陇镇'],
+        data: ['广东省', '浙江省', '福建省', '北京', '上海', '重庆', '新疆'],
         axisTick: {show: false},
         axisLine: {
           lineStyle: {color: '#083B70'}
@@ -35,14 +36,14 @@ export const Chart1 = () => {
       },
       series: [{
         type: 'bar',
-        data: [10, 20, 36, 41, 15, 26, 37, 18, 29]
+        data: [27, 20, 36, 25, 15, 26, 37, 18, 29]
       }]
     }));
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="案发派出所管辖统计"></Title>
-      <div ref={divRef} className="chart"></div>
+      <Title title="案发派出所管辖统计"/>
+      <div ref={divRef} className="chart"/>
     </div>
   );
 };

@@ -7,8 +7,9 @@ import {px} from '../shared/px';
 export const Chart3 = () => {
   const divRef = useRef(null);
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
+    const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {
         type: 'category',
         boundaryGap: false,
@@ -52,8 +53,8 @@ export const Chart3 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="案发时段分析"></Title>
-      <div ref={divRef} className="chart"></div>
+      <Title title="案发时段分析"/>
+      <div ref={divRef} className="chart"/>
     </div>
   );
 };
