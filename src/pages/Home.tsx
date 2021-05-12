@@ -10,6 +10,7 @@ import {Chart6} from '../components/Chart6';
 import {Chart7} from '../components/Chart7';
 import {Form} from '../components/Form';
 import {Clock} from '../components/Clock';
+import {Icon} from '../components/Icon';
 
 export const Home = () => {
   return (
@@ -17,6 +18,10 @@ export const Home = () => {
       <header>
         <Clock/>
         <span>国家公安合成作战平台</span>
+        <div className="info">
+          <Icon name="position"/> shenzhen
+          <Icon name="weather"/> 28℃ cloudy
+        </div>
       </header>
       <main>
         <section className="section1">
@@ -34,6 +39,7 @@ export const Home = () => {
           <Chart7/>
         </section>
       </main>
+      <p className="foot">© Hee 2021-2022</p>
     </div>
   );
 };
