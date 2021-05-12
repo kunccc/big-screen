@@ -9,11 +9,13 @@ import {Chart5} from '../components/Chart5';
 import {Chart6} from '../components/Chart6';
 import {Chart7} from '../components/Chart7';
 import {Form} from '../components/Form';
+import {Clock} from '../components/Clock';
 
 export const Home = () => {
   return (
     <div className="home">
       <header>
+        <Clock/>
         <span>国家公安合成作战平台</span>
       </header>
       <main>

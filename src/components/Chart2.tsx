@@ -26,13 +26,13 @@ export const Chart2 = () => {
         type: 'category',
         boundaryGap: false,
         data: [2012, 2013, 2014, 2015, 2016, 2017, 2018],
-        splitLine: {show: true, lineStyle: {color: '#073E78'}},
+        splitLine: {show: true, lineStyle: {color: '#1e393d'}},
         axisTick: {show: false},
         axisLine: {show: false},
       },
       yAxis: {
         type: 'value',
-        splitLine: {lineStyle: {color: '#073E78'}},
+        splitLine: {lineStyle: {color: '#1e393d'}},
         axisLabel: {
           formatter(val) {
             return val * 100 + '%';
@@ -43,27 +43,27 @@ export const Chart2 = () => {
         {
           name: '抢劫',
           type: 'line',
-          data: [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07].reverse()
+          data: [0.07, 0.05, 0.03, 0.04, 0.03, 0.02, 0.01]
         },
         {
           name: '醉驾',
           type: 'line',
-          data: [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08].reverse()
+          data: [0.05, 0.03, 0.04, 0.06, 0.06, 0.03, 0.04]
         },
         {
           name: '盗窃',
           type: 'line',
-          data: [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09].reverse()
+          data: [0.08, 0.06, 0.04, 0.05, 0.03, 0.02, 0.01]
         },
         {
           name: '故意杀人',
           type: 'line',
-          data: [0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10].reverse()
+          data: [0.09, 0.06, 0.07, 0.05, 0.04, 0.02, 0.01]
         }
       ].map(obj => ({
         ...obj,
         symbol: 'circle',
-        symbolSize: px(5),
+        symbolSize: px(4),
         lineStyle: {width: px(1)}
       }))
     }));

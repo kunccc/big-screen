@@ -13,13 +13,13 @@ export const Chart3 = () => {
         type: 'category',
         boundaryGap: false,
         data: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
-        splitLine: {show: true, lineStyle: {color: '#073E78'}},
+        splitLine: {show: true, lineStyle: {color: '#1e393d'}},
         axisTick: {show: false},
         axisLine: {show: false},
       },
       yAxis: {
         type: 'value',
-        splitLine: {lineStyle: {color: '#073E78'}},
+        splitLine: {lineStyle: {color: '#1e393d'}},
         axisLabel: {
           formatter(val) {
             return val * 100 + '%';
