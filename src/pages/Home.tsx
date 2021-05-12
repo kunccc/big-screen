@@ -1,19 +1,20 @@
 import React from 'react';
 import './home.scss';
 import header from '../images/header.png';
-import {Chart1} from '../charts/Chart1';
-import {Chart2} from '../charts/Chart2';
-import {Chart3} from '../charts/Chart3';
-import {Chart4} from '../charts/Chart4';
-import {Chart5} from '../charts/Chart5';
-import {Chart6} from '../charts/Chart6';
-import {Chart7} from '../charts/Chart7';
+import {Chart1} from '../components/Chart1';
+import {Chart2} from '../components/Chart2';
+import {Chart3} from '../components/Chart3';
+import {Chart4} from '../components/Chart4';
+import {Chart5} from '../components/Chart5';
+import {Chart6} from '../components/Chart6';
+import {Chart7} from '../components/Chart7';
+import {Form} from '../components/Form';
 
 export const Home = () => {
   return (
     <div className="home">
       <header>
-        <img src={header}/>
+        <span>国家公安合成作战平台</span>
       </header>
       <main>
         <section className="section1">
@@ -22,6 +23,7 @@ export const Home = () => {
           <Chart2/>
         </section>
         <section className="section2">
+          <Form/>
           <Chart4/>
         </section>
         <section className="section3">
