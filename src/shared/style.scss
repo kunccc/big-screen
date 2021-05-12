@@ -28,9 +28,12 @@ body {
   font-family: $font-hei;
   font-size: 16px;
 }
-
 #root {
   margin: 0 auto;
   position: relative;
   background-image: url("../images/background.png");
+  background-size: cover;
+}
+.App {
+  height: 100%;
 }
