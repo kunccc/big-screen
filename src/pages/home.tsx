@@ -2,6 +2,7 @@ import React from 'react';
 import './home.scss';
 import header from '../images/header.png';
 import {Chart1} from '../charts/Chart1';
+import {Chart2} from '../charts/Chart2';
 
 export const Home = () => {
   return (
@@ -12,8 +13,10 @@ export const Home = () => {
       <main>
         <section className="section1">
           <Chart1/>
+          <Chart2/>
         </section>
-        <section className="section2"></section>
+        <section className="section2">
+        </section>
         <section className="section3"></section>
       </main>
     </div>
