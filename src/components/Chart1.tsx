@@ -4,9 +4,14 @@ import {createEchartsOptions} from '../shared/createEchartsOptions';
 
 export const Chart1 = () => {
   const divRef = useRef(null);
-  useEffect(() => {
-    const myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+  const myChart = useRef(null);
+  const data = {
+    1: [27, 20, 30, 25, 15, 26, 20],
+    2: [17, 26, 22, 29, 17, 21, 30],
+    3: [14, 23, 30, 18, 20, 23, 14]
+  };
+  const render = data => {
+    myChart.current.setOption(createEchartsOptions({
       color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {
         data: ['广东省', '浙江省', '福建省', '北京', '上海', '重庆', '新疆'],
@@ -35,9 +40,16 @@ export const Chart1 = () => {
       },
       series: [{
         type: 'bar',
-        data: [27, 20, 36, 25, 15, 26, 37, 18, 29]
+        data: data
       }]
     }));
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    render(data[1]);
+    setInterval(() => {
+      render(data[Math.ceil(Math.random() * 3)]);
+    }, 2000);
   }, []);
   return (
     <div className="chartWrapper">
