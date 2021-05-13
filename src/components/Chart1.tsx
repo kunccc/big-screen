@@ -6,15 +6,15 @@ export const Chart1 = () => {
   const divRef = useRef(null);
   const myChart = useRef(null);
   const data = {
-    1: [27, 20, 30, 25, 15, 26, 20],
-    2: [17, 26, 22, 29, 17, 21, 30],
-    3: [14, 23, 30, 18, 20, 23, 14]
+    1: [27, 20, 30, 25, 15, 26, 20, '广东省', '浙江省', '福建省', '北京', '上海', '重庆', '新疆'],
+    2: [17, 26, 22, 29, 17, 21, 30, '湖南省', '湖北省', '江西省', '黑龙江省', '内蒙古', '广西省', '江苏省'],
+    3: [14, 23, 30, 18, 20, 23, 14, '陕西省', '辽宁省', '山东省', '河北省', '河南省', '甘肃省', '宁夏']
   };
   const render = data => {
     myChart.current.setOption(createEchartsOptions({
       color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {
-        data: ['广东省', '浙江省', '福建省', '北京', '上海', '重庆', '新疆'],
+        data: data.slice(7, -1),
         axisTick: {show: false},
         axisLine: {
           lineStyle: {color: '#083B70'}
@@ -40,7 +40,7 @@ export const Chart1 = () => {
       },
       series: [{
         type: 'bar',
-        data: data
+        data: data.slice(0, 6)
       }]
     }));
   };

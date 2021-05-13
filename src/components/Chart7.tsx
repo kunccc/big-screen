@@ -9,24 +9,24 @@ export const Chart7 = () => {
   const data = {
     1: [
       {value: 0.06, name: '深圳'},
-      {value: 0.08, name: '杭州'},
+      {value: 0.15, name: '杭州'},
       {value: 0.13, name: '武汉'},
       {value: 0.06, name: '长沙'},
-      {value: 0.13, name: '兰州'},
+      {value: 0.06, name: '兰州'},
     ],
     2: [
-      {value: 0.08, name: '深圳'},
-      {value: 0.06, name: '杭州'},
-      {value: 0.11, name: '武汉'},
-      {value: 0.09, name: '长沙'},
-      {value: 0.12, name: '兰州'},
+      {value: 0.08, name: '广州'},
+      {value: 0.06, name: '北京'},
+      {value: 0.11, name: '上海'},
+      {value: 0.09, name: '天津'},
+      {value: 0.12, name: '重庆'},
     ],
     3: [
-      {value: 0.11, name: '深圳'},
-      {value: 0.09, name: '杭州'},
-      {value: 0.10, name: '武汉'},
-      {value: 0.10, name: '长沙'},
-      {value: 0.09, name: '兰州'},
+      {value: 0.13, name: '银川'},
+      {value: 0.09, name: '济南'},
+      {value: 0.08, name: '沈阳'},
+      {value: 0.10, name: '河源'},
+      {value: 0.09, name: '金华'},
     ]
   };
   const render = data => {
